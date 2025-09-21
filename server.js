@@ -17,6 +17,8 @@ const app = express();
 const cors = require('cors');
 app.use(cors({
     origin: 'https://ai-herb-tracker.onrender.com',
+    'http://127.0.0.1:5500',                 // local testing
+    'http://localhost:5500'                  // local testing
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
@@ -44,3 +46,4 @@ app.use("/api/batch", require("./routes/batchRoutes"));
 // ----------------------
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
